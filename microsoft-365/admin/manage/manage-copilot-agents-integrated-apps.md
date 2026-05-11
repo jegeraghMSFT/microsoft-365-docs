@@ -11,6 +11,7 @@ ms.date: 03/31/2026
 ms.update-cycle: 180-days
 audience: Admin
 ms.topic: concept-article
+ai-usage: ai-assisted
 ms.service: microsoft-365-copilot
 ms.subservice: agent-management
 ms.localizationpriority: medium
@@ -100,6 +101,39 @@ You can manage agents in the [Microsoft 365 admin center](https://admin.microsof
 - View available, deployed, or blocked agents.
 - Configure agent availability and access.
 - Perform actions such as publishing, deploying, blocking, or removing agents.
+
+## Use Agent Map
+
+Use the **Agent Map** tab in the **Agents** page to visualize your tenant's agents and focus on the agents that need attention.
+
+In Agent Map, you can:
+
+- Identify platform clusters.
+- Search by agent name.
+- Apply filters to narrow the view.
+- Open an agent's details pane.
+- Export the current agent list for reporting.
+
+### Filter options in Agent Map
+
+Use the following filters to narrow what appears on the map:
+
+| Filter group | Filters | Description |
+|---|---|---|
+| **Status** | Available<br>Blocked<br>Draft<br>Not activated | Narrows the view by each agent's current availability in your tenant. |
+| **Publisher type** | Your org<br>Your users<br>Microsoft<br>Third party | Filters by who published or distributed the agent. |
+| **Platform** | Copilot Studio<br>Agent Builder in Microsoft 365 Copilot<br>Microsoft Foundry<br>SharePoint<br>Microsoft 365 Agents Toolkit<br>Amazon Bedrock<br>Other | Groups agents by build platform to help you review build provenance and governance coverage. |
+| **Channel** | Copilot<br>Outlook<br>Teams<br>Microsoft 365 apps<br>SharePoint | Filters by host product so you can review where users encounter agents. |
+| **Usage** | Active users (30D): Top 100 by users, Inactive<br><br>Total sessions (30D): Top 100 by sessions, No sessions<br><br>Exception rate (30D): Has exceptions (>0%), No exceptions<br><br>Assisted hours (30D): Has assisted hours, No assisted hours<br><br>Security: Has security alerts | Highlights usage, reliability, and security signals so you can prioritize investigation and governance actions. |
+
+> [!NOTE]
+> For performance reasons, usage filters are currently available only for tenants with fewer than 4,000 agents. Usage data depends on agents reporting activity through Microsoft Agent 365.
+
+You can also use these quick filters:
+
+- **Agents at risk** to show only agents with active security risks.
+- **Agents without owners** to show shared agents without an active owner.
+- **Blocked agents** to show agents currently blocked across your organization.
 
 ## Related articles
 
