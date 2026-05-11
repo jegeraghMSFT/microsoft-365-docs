@@ -21,13 +21,13 @@ Use Agent Map to explore your organization’s agent landscape, filter to specif
 
 :::image type="content" source="../../media/agents/agent-map.png" alt-text="Screenshot showing the Agent Map, which provides an inventory of agents in the Microsoft 365 admin center." lightbox="../../media/agents/agent-map.png":::
 
-You can use the Agent Map to address what need your attention, rather than agent inventory details. Use the Agent Map accomplish the following actions:
+You can use the Agent Map to focus on what needs your attention, rather than only on inventory details. Use the Agent Map to do the following:
 
 - Spot patterns fast by identifying clusters of agents across your tenant.
-- Slice the map with built-in filters to focus on the agents that matter right now. Filter by Status, Publisher type, Platform, Channel, Data source, or Usage.
+- Slice the map with built-in filters to focus on the agents that matter right now. Filter by Status, Publisher type, Platform, Channel, or Usage.
 
   > [!NOTE]
-  > Usage is supported via Agent365 observability data for tenants with below 4,000 agents.
+  > Usage is supported through Agent 365 observability data for tenants with fewer than 4,000 agents.
 
 - Track key signals at a glance with high-level metrics and agent-level indicators.
 - Drill into any agent to review important details such as publisher, type, platform, version, and connectivity.
@@ -69,25 +69,24 @@ You can find specific agents quickly by name, using the **search bar** at the to
 
 The agent summary details, which are provided as cards at the top of the pane, can be selected to provide a mutual exclusive summary. However, the dropdown filter selections, below the cards, can be combined independently.  
 
-Available filters include the following:
+Available quick filters include the following:
 
-- **Agents at risk** – Focus on agents with one or more active security risks. The count reflects high-severity alerts from security platforms.
-- **Agents without owners** – Identify shared agents that no longer have an active owner (for example, when the creator has left the organization).
-- **Unmanaged agents** – Agents created or managed outside of Agent 365 without its risk protection and observability. 
+- **Agents at risk** - Show only agents with one or more active security risks. The count shown reflects high-severity alerts sourced from Microsoft Entra.
+- **Agents without owners** - Show shared agents that no longer have an active owner, such as agents whose creator has left the organization.
+- **Blocked agents** - Show only agents that are currently blocked across your organization.
 
 The following table provides filter details:
 
 | Filter group | Filters | Description |
 |---|---|---|
-| Status | <ul><li>Available</li><li>Blocked</li></ul> | Narrows the view by how widely an agent is currently available in your tenant. This view can show a limited rollout to a fully blocked or unavailable view. |
-| Publisher type | <ul><li>Microsoft</li><li>External partners</li><li>Published by your org</li><li>Shared by creator</li></ul> | Lets you slice the map by who published or distributed the agent, allowing you to separate first-party, third-party, and internally produced agents (including creator-shared agents). |
-| Platform | <ul><li>Copilot Studio</li><li>Microsoft 365 Copilot Agent Builder</li><li>SharePoint</li><li>Foundry</li><li>Azure AI Foundry</li><li>Amazon Bedrock</li><li>Google Vertex AI</li><li>Other</li></ul> | Groups agents by the platform they were built on to help you understand build provenance, tooling trends, and governance coverage across your estate. |
-| Channel | <ul><li>Copilot</li><li>Outlook</li><li>Teams</li><li>Office</li><li>SharePoint</li></ul> | Filters agents by where users encounter them, so you can investigate exposure and adoption   by host product. |
-| Data source | <ul><li>Embedded knowledge</li><li>Fine-tuned models</li></ul> | Distinguishes whether an agent relies on embedded content for grounding responses or on a fine‑tuned model that has been trained on organizational data. |
-| Usage | **Active users**: Top 100 by users, Inactive<br><br>**Total sessions**: Top 100 by sessions, No sessions<br><br>**Exception rate**: Has exceptions (>0%), No exceptions<br></br>**Assisted hours**: Has assisted hours, No assisted hours | Highlights agents by recent usage and reliability signals so you can prioritize high-impact agents, find unused ones, and spot agents that may need attention. |
+| **Status** | Available<br>Blocked<br>Draft<br>Not activated | Narrows the view by how widely an agent is currently available in your tenant. This view can show a limited rollout to a fully blocked or unavailable view. |
+| **Publisher type** | Your org<br>Your users<br>Microsoft<br>Third party | Lets you slice the map by who published or distributed the agent, allowing you to separate first-party, third-party, and internally produced agents (including creator-shared agents). |
+| **Platform** | Copilot Studio<br>Agent Builder in Microsoft 365 Copilot<br>Microsoft Foundry<br>SharePoint<br>Microsoft 365 Agents Toolkit<br>Amazon Bedrock<br>Other | Groups agents by the platform they were built on to help you understand build provenance, tooling trends, and governance coverage across your estate. |
+| **Channel** | Copilot<br>Outlook<br>Teams<br>Microsoft 365 apps<br>SharePoint | Filters agents by where users encounter them, so you can investigate exposure and adoption by host product. |
+| **Usage** | Active users (30D): Top 100 by users, Inactive<br><br>Total sessions (30D): Top 100 by sessions, No sessions<br><br>Exception rate (30D): Has exceptions (>0%), No exceptions<br><br>Assisted hours (30D): Has assisted hours, No assisted hours<br><br>Security: Has security alerts | Highlights agents by recent usage and reliability and security signals so you can prioritize high-impact agents, find unused ones, and spot agents that may need attention. |
 
 > [!NOTE]
-> For performance reasons, the Usage/Observability filters are currently available only for tenants with fewer than 4,000 users. Usage is based on agents reporting activity via Agent 365.
+> For performance reasons, the Usage filters are currently available only for tenants with fewer than 4,000 agents. Usage is based on agents reporting activity via Agent 365.
 
 ### Exporting agents
  
