@@ -1,12 +1,13 @@
 ---
 title: Use Agent Map in the Microsoft 365 admin center
 description: Learn how to use Agent Map to visualize, manage, and take action on agents in your Microsoft 365 tenant.
-ms.date: 04/07/2026
+ms.date: 06/08/2026
 author: erikre
 ms.topic: concept-article
 ms.custom:
   - ai-gen-docs-bap
   - ai-gen-description
+ai-usage: ai-assisted
 ms.reviewer: jenniferge
 ms.author: erikre
 manager: scotv
@@ -100,6 +101,66 @@ The Agent Map provides controls to help you navigate the map.
 - **Zoom In/Out**: Adjust the map view for closer inspection or broader visualization.
 - **Keyboard shortcuts**: Provides a key to **Keyboard shortcuts**. You can select this option to see navigation, zoom, selection and general keyboard shortcuts.
 - **Settings**: Provides a slider to control the **Max agents per platform** in the Agent Map. 
+
+## Single Agent Map (preview)
+
+The Single Agent Map (preview) gives admins a connected view of one agent, the users who interact with it, and the tools it invokes. The experience uses Agent 365 observability data to help you investigate usage, identify exceptions, and understand activity flow.
+
+Single Agent Map is currently available in preview and is subject to change.
+
+### What you can do
+
+- Understand how a specific agent is used across your organization.
+- Identify users with the highest interaction volume.
+- See which tools the agent calls most often.
+- Detect exception patterns and reliability issues.
+- Review activity over the last 7 days or last 30 days (default).
+
+### What data appears in the map
+
+The map is generated from telemetry for SDK-integrated agents and includes aggregated activity across sessions and interactions. Connection lines are weighted to show interaction volume, so thicker lines indicate more activity.
+
+If a tool has more than 10 exceptions during the selected time period, the line to that tool is highlighted.
+
+Single Agent Map shows the top 50 users and top 50 tools for a selected agent.
+
+You can select nodes to investigate details:
+
+- Agent node: Review agent details and summary activity.
+- User node: Open user details consistent with the existing **Users** experience in the admin center.
+- Tool node: Review tool calls, exception counts, and last activity.
+
+To see the full list of users for an agent, open the **Activity** tab in the agent side pane.
+
+> [!NOTE]
+> Each reported interaction with a tool or server is counted as one tool call. Counts might be higher when multiple interactions occur during a single execution loop, such as initialization calls between an agent and a server.
+
+> [!NOTE]
+> If **Conceal user, group, and site names in all reports** is enabled in your organization, user names are concealed in Single Agent Map.
+> To show user names again, go to **Org settings** > **Reports** and clear that setting.
+
+### How to open Single Agent Map
+
+1. Sign in to the [Microsoft 365 admin center](https://admin.microsoft.com/).
+1. In the left navigation pane, select **Agents** > **All Agents** > **Map**.
+1. Select an agent that has observability data.
+1. In the agent view, review summary metrics such as users, sessions, and exceptions.
+1. Select **All connections** to open Single Agent Map.
+
+### Supported agent types
+
+- Any agent that sends observability data to Agent 365. For more information about Agent 365 observability support, see [Microsoft Agent 365 overview](agent-365-overview.md).
+- This includes first-party Microsoft agents and agents built with Microsoft Copilot Studio.
+
+### Limitations (preview)
+
+- The feature is in preview and might change.
+- Insights depend on observability data availability.
+- Knowledge signals aren't included yet.
+
+### When to use Single Agent Map
+
+Use Single Agent Map when you need to investigate one agent's adoption, understand user interaction patterns, diagnose tool exceptions, or follow interaction flow between an agent, users, and tools.
  
 ## Agent details
  
